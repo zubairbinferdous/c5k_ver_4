@@ -70,33 +70,8 @@
     </div>
   </div>
 </section>
-
 <!-- Swiper Init Script -->
 
-
-
-
-
-<section class="w-full py-6 px-4 mx-auto max-w-7xl">
-  <h3 class="text-2xl font-bold text-center text-gray-800">Find Book by Category</h3>
-  <p class="text-center text-gray-500 mt-1 mb-6">Explore books categorized for your interests.</p>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 link-style">
-    @foreach ($categories as $category)
-    @php
-    $colors = ['bg-blue-500', 'bg-green-500', 'bg-yellow-500', 'bg-red-500', 'bg-cyan-500'];
-    $color = $colors[$loop->index % count($colors)];
-    @endphp
-
-    <a href="{{ route('books.category', $category->id) }}" class="">
-      <div
-        class="w-full h-[180px] rounded-xl text-white {{ $color }} shadow-md hover:scale-[1.03] transition-transform duration-300 flex items-center justify-center">
-        <h5 class="text-lg font-bold text-center px-4">{{ $category->name }}</h5>
-      </div>
-    </a>
-    @endforeach
-  </div>
-</section>
 
 
 <section class="py-10 bg-cover bg-center" style="background-image: url('{{ asset('public/backend/footer.jpg') }}');" >
@@ -154,6 +129,26 @@
 </div>
 
 
+<section class="w-full py-6 px-4 mx-auto max-w-7xl">
+  <h3 class="text-2xl font-bold text-center text-gray-800">Find Book by Category</h3>
+  <p class="text-center text-gray-500 mt-1 mb-6">Explore books categorized for your interests.</p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 link-style">
+    @foreach ($categories as $category)
+    @php
+    $colors = ['bg-blue-500', 'bg-green-500', 'bg-yellow-500', 'bg-red-500', 'bg-cyan-500'];
+    $color = $colors[$loop->index % count($colors)];
+    @endphp
+
+    <a href="{{ route('books.category', $category->id) }}" class="">
+      <div
+        class="w-full h-[180px] rounded-xl text-white {{ $color }} shadow-md hover:scale-[1.03] transition-transform duration-300 flex items-center justify-center">
+        <h5 class="text-lg font-bold text-center px-4">{{ $category->name }}</h5>
+      </div>
+    </a>
+    @endforeach
+  </div>
+</section>
 
 
 <section class="py-16 bg-gray-50">

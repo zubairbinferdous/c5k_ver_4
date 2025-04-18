@@ -73,6 +73,61 @@
     <!-- Swiper Init Script -->
 
 
+    <section class="py-10 bg-cover bg-center" style="background-image: url('{{ asset('public/backend/footer.jpg') }}');" >
+        <div class="container mx-auto text-center text px-4" style="color:white">
+          <h4 class="text-2xl font-semibold mb-4">Discover Our World-wide Academic Collection</h4>
+          <p class="max-w-3xl mx-auto mb-8 text-sm sm:text-base leading-relaxed">
+            We take pride in presenting a wide range of academic works spanning numerous disciplines.
+            From business to information technology, sociology to economics, science to engineering,
+            our catalog reflects the richness and diversity of contemporary university/institute research.
+            Whether you’re a student, academic researcher, scientific community member, or knowledge enthusiast,
+            you’ll certainly find titles that pique your curiosity and deepen your understanding.
+          </p>
+        </div>
+      
+        <!-- Slider Section -->
+        <div class="py-6">
+          <div class="container mx-auto px-4">
+            <div class="relative overflow-hidden">
+              <div class="flex transition-transform duration-1000 ease-in-out" x-data="{ activeIndex: 0, interval: null }"
+                x-init="interval = setInterval(() => {
+                                  activeIndex = (activeIndex + 1) % {{ ceil($books->count() / 3) }};
+                              }, 3000);" x-ref="carousel"
+                :style="'transform: translateX(-' + (activeIndex * 100) + '%)'">
+                @foreach ($books->chunk(3) as $chunk)
+                <div class="min-w-full flex gap-4 justify-center">
+                  @foreach ($chunk as $book)
+                  <div class="w-full sm:w-1/5">
+                    <div class="bg-white rounded-md shadow-md overflow-hidden">
+                      <img src="{{ asset('public/backend/books/' . $book->book_img) }}" alt="Book Image"
+                        class="w-full h-84 object-cover">
+                    </div>
+                  </div>
+                  @endforeach
+                </div>
+                @endforeach
+              </div>
+            </div>
+      
+            <!-- Indicators -->
+            <div class="flex justify-center mt-6 space-x-2" x-data="{ activeIndex: 0 }">
+              @foreach ($books->chunk(3) as $index => $chunk)
+              <button class="w-3 h-3 rounded-full bg-white/70 hover:bg-white transition-all duration-300"
+                :class="{ 'bg-white': activeIndex === {{ $index }} }"
+                @click="activeIndex = {{ $index }}"></button>
+              @endforeach
+            </div>
+          </div>
+        </div>
+    </section>
+      
+    <div class="flex justify-center items-center py-4">
+        <a href="{{ route('bookList.index') }}" class="bg-blue-600 text-white py-2 px-4 shadow rounded hover:bg-blue-700 transition duration-200">
+            All Books
+        </a>
+    </div>
+
+
     <section class="w-full py-6 px-4 mx-auto max-w-7xl">
         <h3 class="text-2xl font-bold text-center text-gray-800">Find Book by Category</h3>
         <p class="text-center text-gray-500 mt-1 mb-6">Explore books categorized for your interests.</p>
@@ -94,61 +149,6 @@
         </div>
     </section>
 
-
-    <section class="py-10 bg-cover bg-center" style="background-image: url('{{ asset('public/backend/footer.jpg') }}');">
-        <div class="container mx-auto text-center text px-4">
-            <h4 class="text-2xl font-semibold mb-4">Discover Our World-wide Academic Collection</h4>
-            <p class="max-w-3xl mx-auto mb-8 text-sm sm:text-base leading-relaxed">
-                We take pride in presenting a wide range of academic works spanning numerous disciplines.
-                From business to information technology, sociology to economics, science to engineering,
-                our catalog reflects the richness and diversity of contemporary university/institute research.
-                Whether you’re a student, academic researcher, scientific community member, or knowledge enthusiast,
-                you’ll certainly find titles that pique your curiosity and deepen your understanding.
-            </p>
-        </div>
-
-        <!-- Slider Section -->
-        <div class="py-6">
-            <div class="container mx-auto px-4">
-                <div class="relative overflow-hidden">
-                    <div class="flex transition-transform duration-1000 ease-in-out" x-data="{ activeIndex: 0, interval: null }"
-                        x-init="interval = setInterval(() => {
-                            activeIndex = (activeIndex + 1) % {{ ceil($books->count() / 3) }};
-                        }, 3000);" x-ref="carousel"
-                        :style="'transform: translateX(-' + (activeIndex * 100) + '%)'">
-                        @foreach ($books->chunk(3) as $chunk)
-                            <div class="min-w-full flex gap-4 justify-center">
-                                @foreach ($chunk as $book)
-                                    <div class="w-full sm:w-1/5">
-                                        <div class="bg-white rounded-md shadow-md overflow-hidden">
-                                            <img src="{{ asset('public/backend/thesis/' . $book->book_img) }}"
-                                                alt="Book Image" class="w-full h-84 object-cover">
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-
-                <!-- Indicators -->
-                <div class="flex justify-center mt-6 space-x-2" x-data="{ activeIndex: 0 }">
-                    @foreach ($books->chunk(3) as $index => $chunk)
-                        <button class="w-3 h-3 rounded-full bg-white/70 hover:bg-white transition-all duration-300"
-                            :class="{ 'bg-white': activeIndex === {{ $index }} }"
-                            @click="activeIndex = {{ $index }}"></button>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="d-flex justify-content-center align-items-center py-4 ">
-        <a href="{{ route('bookList.index') }}" class="bg-primary text-white py-2 px-4 shadow"
-            style="text-decoration:none">
-            All Books
-        </a>
-    </div>
 
     <section class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
