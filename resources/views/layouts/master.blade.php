@@ -46,7 +46,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="{{ asset('public/frontend/css/custom.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend_custom/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/frontend_custom/custom.css') }}">
 
     @stack('add-css')
 
