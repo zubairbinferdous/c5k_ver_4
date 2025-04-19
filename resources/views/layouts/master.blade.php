@@ -105,44 +105,33 @@
                     </a>
                 </div>
 
-                <<<<<<< HEAD <!-- Center: Search Bar -->
-                    <div class="flex-grow mx-4 flex justify-center">
-                        <form action="" method="GET" class="w-1/2 relative flex">
-                            <input type="text" name="query" placeholder="Search"
-                                class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-[#007C92] transition duration-300 placeholder:font-bold">
 
-                            <button type="submit"
-                                class="ml-2 bg-[#007C92] text-white font-bold px-4 py-2 rounded-md hover:bg-[#005f73] transition duration-300">
-                                Search
-                            </button>
-                        </form>
-                    </div>
-                    =======
-                    <!-- Center: Search Bar -->
-                    <div class="flex-grow mx-4 flex justify-center">
-                        <form action="" method="GET" class="w-1/2 relative flex">
-                            <input type="text" name="query" placeholder="Search"
-                                class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-[#007C92] transition duration-300 placeholder:font-bold">
 
-                            <button type="submit"
-                                class="ml-2 bg-[#007C92] text-white font-bold px-4 py-2 rounded-md hover:bg-[#005f73] transition duration-300">
-                                Search
-                            </button>
-                        </form>
-                    </div>
-                    >>>>>>> 9c28da84a71675402d44ad91806f57be865d2184
+                <!-- Center: Search Bar -->
+                <div class="flex-grow mx-4 flex justify-center">
+                    <form action="" method="GET" class="w-1/2 relative flex">
+                        <input type="text" name="query" placeholder="Search"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-[#007C92] transition duration-300 placeholder:font-bold">
+
+                        <button type="submit"
+                            class="ml-2 bg-[#007C92] text-white font-bold px-4 py-2 rounded-md hover:bg-[#005f73] transition duration-300">
+                            Search
+                        </button>
+                    </form>
+                </div>
 
 
 
-                    <!-- Right: Social Icons -->
-                    <div class="flex items-center space-x-4">
-                        <a href="https://www.facebook.com/share/1KDbQAE6Ro/" target="_blank"
-                            class="text-[#007C92] text-xl"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-[#007C92] text-xl"><i class="fab fa-twitter"></i></a>
-                        <!-- Fixed typo -->
-                        <a href="#" class="text-[#007C92] text-xl"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-[#007C92] text-xl"><i class="fab fa-linkedin"></i></a>
-                    </div>
+
+                <!-- Right: Social Icons -->
+                <div class="flex items-center space-x-4">
+                    <a href="https://www.facebook.com/share/1KDbQAE6Ro/" target="_blank"
+                        class="text-[#007C92] text-xl"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-[#007C92] text-xl"><i class="fab fa-twitter"></i></a>
+                    <!-- Fixed typo -->
+                    <a href="#" class="text-[#007C92] text-xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-[#007C92] text-xl"><i class="fab fa-linkedin"></i></a>
+                </div>
             </div>
         </nav>
 
