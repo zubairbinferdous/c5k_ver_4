@@ -87,10 +87,11 @@
 
 <body>
     <section class="py-3 individual_section">
-     
+
 
         <div class="containers">
-            <div class="journal_inside_pages" style="height: auto; background-color: {{ $journal->backgroundColor ?? '#142141' }};">
+            <div class="journal_inside_pages"
+                style="height: auto; background-color: {{ $journal->backgroundColor ?? '#142141' }};">
                 <div class="journal_image">
                     <img src="{{ asset('public/backend/journal/' . $journal->journal_image) }}">
                 </div>
@@ -98,7 +99,7 @@
                 <div class="journal_content">
                     <h4>{{ $journal->title }}</h4>
                     <h6>Open Access</h6>
-                    
+
                     <div class="journal_score">
                         <span>Cite Score: {{ $journal->cite_score ?? '' }}</span>
                         <span>Impact Factor: {{ $journal->impact_factor }}</span>
@@ -107,35 +108,46 @@
             </div>
 
 
-            <div class="journal_issue_menu" style="background-color:{{ $journal->background_color2 }};color:{{ $journal->backgroundColor }}!">
+            <div class="journal_issue_menu"
+                style="background-color:{{ $journal->background_color2 }};color:{{ $journal->backgroundColor }}!">
                 <ul class="journal_parent">
                     <li class="journal_parent_core journal_nav">Current Issue
                         <ul class="dropdown_menu">
-                            <li><a class="dropdown_item" href="{{ route('current.issue', ['id' => $journal->id]) }}">Current Issue</a></li>
+                            <li><a class="dropdown_item"
+                                    href="{{ route('current.issue', ['id' => $journal->id]) }}">Current Issue</a></li>
 
-                            <li><a class="dropdown_item" href="{{ route('article-press', ['id' => $journal->id]) }}">Article in Press</a></li>
+                            <li><a class="dropdown_item"
+                                    href="{{ route('article-press', ['id' => $journal->id]) }}">Article in Press</a>
+                            </li>
 
-                            <li><a class="dropdown_item" href="{{ route('special-issue', ['id' => $journal->id]) }}">Special Issue</a></li>
+                            <li><a class="dropdown_item"
+                                    href="{{ route('special-issue', ['id' => $journal->id]) }}">Special Issue</a></li>
                         </ul>
                     </li>
 
                     <li class="journal_parent_core journal_nav">Archive
                         <ul class="dropdown_menu">
-                            <li><a class="dropdown_item" href="{{ route('all-issue', ['id' => $journal->id]) }}">All Issue</a></li>
+                            <li><a class="dropdown_item" href="{{ route('all-issue', ['id' => $journal->id]) }}">All
+                                    Issue</a></li>
 
-                            <li><a class="dropdown_item" href="{{ route('best-paper-awards', $journal->id) }}">Best Paper Awards</a></li>
+                            <li><a class="dropdown_item" href="{{ route('best-paper-awards', $journal->id) }}">Best
+                                    Paper Awards</a></li>
                         </ul>
                     </li>
 
                     <li class="journal_parent_core journal_nav">About
                         <ul class="dropdown_menu">
                             <li><a class="dropdown_item" href="#">Journal Overview</a></li>
-                            <li><a class="dropdown_item" href="{{ route('business.editorial', $journal->id) }}">Editorial Board</a></li>
-                            <li><a class="dropdown_item" href="{{ route('language-editing-service', ['id' => $journal->id]) }}">Language Editing Service</a></li>
+                            <li><a class="dropdown_item"
+                                    href="{{ route('business.editorial', $journal->id) }}">Editorial Board</a></li>
+                            <li><a class="dropdown_item"
+                                    href="{{ route('language-editing-service', ['id' => $journal->id]) }}">Language
+                                    Editing Service</a></li>
                         </ul>
                     </li>
 
-                    <li class="journal_parent_core"> <a href="https://forms.gle/66EERXxnJpCiJPW86">Submit Your Article</a> </li>
+                    <li class="journal_parent_core"> <a href="https://forms.gle/66EERXxnJpCiJPW86">Submit Your
+                            Article</a> </li>
                     <li class="journal_parent_core">Guide for Authors</li>
                 </ul>
             </div>

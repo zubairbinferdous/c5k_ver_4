@@ -1,288 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $issuDetails->title ?? 'Article Details' }}</title>
-    @include('layout.header')
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-
-    <style>
-        .journal-name {
-            font-family: Georgia, serif;
-            font-size: 18px;
-            font-weight: 600;
-        }
-
-        .journal-name a {
-            text-decoration: none;
-            color: black;
-        }
-
-        .single-issu-section .article-title {
-            font-family: Georgia, serif;
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            text-align: center;
-            margin-top: 10px;
-            font-family: "Georgia", serif;
-
-        }
-
-        .single-issu-section .article-title a {
-            text-decoration: none;
-            color: black !importanti;
-        }
-
-        .article-title a:hover {
-            color: blue;
-            border-bottom: 2px solid black;
-            padding-bottom: 5px;
-        }
-
-        .author-info {
-            font-size: 0.95rem;
-            color: #777;
-            text-align: center;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            padding-top: 2px;
-        }
-
-
-        .abstract-section {
-            padding: 15px;
-            font-size: 16px;
-            text-align: justify;
-            font-family: 'Merriweather', "Times New Roman", Georgia, Garamond, serif;
-
-
-
-            color: black;
-            border-radius: 8px;
-            margin-bottom: 30px;
-
-        }
-
-        .keyword {
-            font-family: 'Merriweather', "Times New Roman", Georgia, Garamond, serif;
-            border-bottom: 2px solid #cccccc;
-            font-size: 15px;
-
-
-
-
-        }
-
-        .banner-section {
-            background-color: #f8f9fa;
-            border-bottom: 1px solid #cccccc;
-            /* Muted gray */
-
-
-
-        }
-
-        .rotate-180 {
-            transform: rotate(180deg);
-            transition: transform 0.2s ease;
-        }
-
-        .logo-img {
-            height: 180px;
-            width: 180px;
-
-        }
-
-        .logo-img img {
-            height: 180px;
-            width: 180px;
-        }
-
-        .image-img {
-            height: 100px;
-            width: 100px;
-        }
-
-        .download1 {
-            background: rgb(250, 244, 0);
-            font-weight: 500;
-            font-size: 22px;
-        }
-
-        .download2 {
-            background: rgb(0, 154, 203);
-            font-weight: 500;
-            font-size: 22px;
-            color: white;
-
-        }
-
-        .article-information {
-            color: black;
-            font-family: 'Merriweather', "Times New Roman", Georgia, Garamond, serif;
-
-
-        }
-
-        @media (max-width: 768px) {
-            .image-img {
-                height: 80px;
-                width: 80px;
-            }
-
-            .banner-section {
-                padding-bottom: 20px;
-            }
-        }
-
-        .main-sect-issu {
-            border-top: 3px solid black;
-        }
-
-        .main-sect-issu .author-list a {
-            text-decoration: none;
-            color: #0d6efd;
-            /* Bootstrap's primary color */
-            border-bottom: 2px solid #0d6efd;
-            margin-right: 3px;
-            font-weight: 400;
-
-        }
-
-        .main-sect-issu .author-list a:hover {}
-
-        .main-sect-issu .custom-link a {
-            font-family: 'Merriweather', "Times New Roman", Georgia, Garamond, serif;
-
-            display: block;
-            width: 100%;
-            text-decoration: none;
-            color: #0d6efd;
-            /* Text color */
-            padding: 10px 0;
-            /* Add some spacing */
-            border-top: 1px solid black;
-            /* Muted gray */
-            border-bottom: 1px solid #cccccc;
-            /* Muted gray */
-            font-family: Arial, sans-serif;
-            /* Clean font style */
-            font-size: 16px;
-            /* Adjust font size */
-            transition: color 0.3s ease, border-color 0.3s ease;
-            /* Add hover transition */
-            margin-bottom: 4px;
-        }
-
-        .main-sect-issu .custom-link a:hover {
-            color: black;
-            /* Change text color on hover */
-            border-color: darkblue;
-            /* Darken both borders on hover */
-        }
-
-
-        .side-drawer {
-            position: fixed;
-            top: 0;
-            left: -300px;
-            /* Hidden by default */
-            width: 300px;
-            height: 100%;
-            background: #fff;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            overflow-y: auto;
-            transition: all 0.3s ease-in-out;
-            z-index: 1050;
-        }
-
-        .side-drawer.open {
-            left: 0;
-            /* Slide into view */
-        }
-
-        .drawer-content {
-            position: relative;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-
-        #issueTabs {
-            border-bottom: none;
-            /* Remove default border */
-        }
-
-        /* Active tab styling */
-        .nav-tabs .nav-link.active {
-            background: rgb(250, 244, 0);
-            color: black !important;
-            border: none;
-            /* Remove default border */
-            border-radius: 0;
-            /* Remove rounded corners */
-        }
-
-        /* Default tab styling */
-        .nav-tabs .nav-link {
-            color: white;
-            border: none;
-            /* Remove default border */
-        }
-
-
-
-        /* Full-width tabs */
-        .nav-item.flex-fill {
-            flex: 1 1 auto;
-            /* Ensure tabs take up equal space */
-        }
-
-
-
-
-        .stats-card {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .stats-card img {
-            width: 130px;
-            height: auto;
-        }
-
-        .stats-card span {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -115%);
-            font-size: 17px;
-            font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 8px;
-        }
-    </style>
-</head>
-
-<body>
+@extends('./layouts.master')
+@section('userContent')
     @include('pages.page_header_nav')
-
     <div class="container ">
         <div class="row main-sect-issu py-2 mt-4 ">
             <div class="col-lg-8 single-issu-section h-auto  bg-white shadow">
@@ -307,9 +25,8 @@
                                 <img src="{{ asset('public/backend/journal/' . $journal->journal_image) }}"
                                     class="image-img">
                             </a>
-                            <!--<img src="{{ asset('public/front/images/papers/Journal-1.png') }}" alt="Logo" >-->
+
                         </div>
-                    </div>
                 </section>
                 <div>
 
@@ -370,8 +87,8 @@
                         </div>
 
                         <!-- Toggle Button -->
-                        <button class="btn btn-link text-primary p-0 mt-2" data-toggle="collapse"
-                            data-target="#moreContent" aria-expanded="false" aria-controls="moreContent">
+                        <button class="btn btn-link text-primary p-0 mt-2" data-toggle="collapse" data-target="#moreContent"
+                            aria-expanded="false" aria-controls="moreContent">
                             <span class="show-more">Show more</span>
                             <span class="show-less d-none">Show less</span>
                         </button>
@@ -393,39 +110,6 @@
                         <p><strong>Address:</strong> {{ $authorsWithAffiliation->first()->address }}</p>
                     </div>
                 </div>
-                <!-- Modal -->
-                <!-- Centered Modal -->
-                {{-- <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="emailModalLabel">Author's Details</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body text-center">
-                <!-- Display Email and Department -->
-                <p><strong>Email:</strong> 
-                    <a href="mailto:{{ $authorsWithAffiliation->first()->email }}" class="text-primary">
-                        {{ $authorsWithAffiliation->first()->email }}
-                    </a>
-                </p>
-                <p><strong>Department:</strong> 
-                    {{ $authorsWithAffiliation->first()->department }}
-                </p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div> --}}
-
-
-
-
-
 
                 <div class="custom-link pl-3 mb-3">
                     <a href="#">
@@ -451,19 +135,18 @@
 
             <div class="col-lg-4 shadow ">
                 <ul class="nav nav-tabs mt-4 w-100" id="issueTabs" role="tablist"
-                    style=" background: rgb(0, 154, 203);;
-;color:white;">
+                    style=" background: rgb(0, 154, 203);color:white;">
                     <li class="nav-item flex-fill">
-                        <a class="nav-link active text-white text-center" id="about-tab" data-toggle="tab"
-                            href="#about" role="tab">About</a>
+                        <a class="nav-link active text-white text-center" id="about-tab" data-toggle="tab" href="#about"
+                            role="tab">About</a>
                     </li>
                     <li class="nav-item flex-fill">
                         <a class="nav-link text-white text-center" id="cited-tab" data-toggle="tab" href="#cited"
                             role="tab">Cited by</a>
                     </li>
                     <li class="nav-item flex-fill">
-                        <a class="nav-link text-white text-center" id="related-tab" data-toggle="tab"
-                            href="#related" role="tab">Related</a>
+                        <a class="nav-link text-white text-center" id="related-tab" data-toggle="tab" href="#related"
+                            role="tab">Related</a>
                     </li>
                 </ul>
                 <div class="tab-content mt-3" id="issueTabsContent">
@@ -480,12 +163,6 @@
                                 </div>
 
                             </a>
-                            {{-- <div>
-                                <a href="{{ route('article.view', ['filename' => basename($issuDetails->article_html)]) }}" target="_blank" class="btn download2 w-100 text-left py-3">
-                                    <i class="bi bi-file-text mr-2"></i>
-                                    Article HTML
-                                </a>
-                            </div> --}}
                             <div>
                                 <a href="#" target="_blank"
                                     class="btn download2 w-100 text-left py-3 cursor-pointer">
@@ -526,10 +203,9 @@
                                                 <!-- Email Icon -->
                                                 <a href="mailto:example@example.com" class="text-danger  mr-2 ml-2"
                                                     aria-label="Share via Email">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                        height="24" viewBox="0 0 24 24" fill="none"
-                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                        stroke-linejoin="round"
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                                         class="icon icon-tabler icons-tabler-outline icon-tabler-mail">
                                                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                                         <path
@@ -558,15 +234,12 @@
                                                             <path d="M16 16v-3a2 2 0 0 0 -4 0" />
                                                         </svg>
                                                     </a>
-
                                                 </a>
-
                                                 <a href="#" class="text-primary mr-2 ml-2"
                                                     aria-label="Share on Facebook">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                        height="24" viewBox="0 0 24 24" fill="none"
-                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                        stroke-linejoin="round"
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                                         class="icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook">
                                                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                                         <path
@@ -576,20 +249,9 @@
                                             </div>
                                         </div>
                                     </div>
-
-
-
-
-
-
-
-
                                 </div>
-
-
                             </div>
                         </div>
-
                         <div>
                             <div
                                 class="d-flex align-items-center border p-3 gap-3 my-3 bg-white shadow-md rounded shadow-sm bg-light">
@@ -687,13 +349,10 @@
                 </div>
             </div>
         </div>
-
     </div>
+@endsection
 
-    @include('layout.footer_nav')
-    @include('layout.footer')
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+@push('scripts')
     <script>
         $(document).ready(function() {
             const toggleButton = $('[data-toggle="collapse"]');
@@ -717,7 +376,4 @@
             document.getElementById('sideDrawer').classList.remove('open');
         }
     </script>
-
-</body>
-
-</html>
+@endpush

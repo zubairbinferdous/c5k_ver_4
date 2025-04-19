@@ -49,11 +49,6 @@ Route::middleware(['XSS'])->group(function () {
     Route::get('/thesis/{id}', [ThesisController::class, 'details'])->name('thesis.details');
 
 
-
-
-
-
-
     Route::get('contact/support', 'HomeController@contactSupport')->name('contact.support');
 
     Route::get('/mission/vission', 'HomeController@mission')->name('mission.vission');
@@ -80,7 +75,8 @@ Route::middleware(['XSS'])->group(function () {
     // Route::get('/current-issue/{id}/current_issue_list/{volumeId}/issu-details/{issueId}', 'PageController@article_issue')->name('article.issue');
 
 
-    Route::get('/current-issue/{id}/current_issue_list/{volumeId}/issue-details/{issueId}', 'PageController@single_issue')->name('single.issue');
+    Route::get('/{id}/{volumeId}/{issueId}/article/{Article_ID?}', 'PageController@single_issue')->name('single.issue');
+
 
     Route::get('/current-issue/{id}/current_issue_list/{volumeId}/issue-articles/{issueId}', 'PageController@article_issue')->name('article.issue');
 
