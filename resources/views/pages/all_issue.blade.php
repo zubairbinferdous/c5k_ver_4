@@ -1,6 +1,7 @@
 @extends('./layouts.master')
 @section('userContent')
 @include('pages.page_header_nav')
+
   <div class="containers mx-auto px-4 py-6">
     <h4 class="text-2xl font-semibold mb-4">Volumes and Issues</h4>
 

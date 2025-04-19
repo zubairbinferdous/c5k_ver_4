@@ -45,9 +45,14 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<<<<<<< HEAD
     <link rel="stylesheet" href="{{ asset('/frontend/css/custom.css') }}">
+=======
+    <link rel="stylesheet" href="{{ asset('public/frontend/css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/frontend_custom/custom.css') }}">
+>>>>>>> 9c28da84a71675402d44ad91806f57be865d2184
 
-
+    @stack('add-css')
 
 </head>
 
@@ -80,13 +85,13 @@
             <div class="max-w-7xl mx-auto flex justify-between items-center">
                 <!-- Left: Show C5K.com Always, Hide Other Links on Mobile -->
                 <div class="flex space-x-4">
-                    <a href="#" class="flex text-xs items-center hover:text-gray-400">
+                    <a href="#" class="flex text-xs uppercase items-center hover:text-gray-400">
                         <span class="mr-1 "></span>C5K.com
                     </a>
-                    <a href="#" class="hover:text-gray-400 hidden md:inline text-xs">C5K.co</a>
-                    <a href="#" class="hover:text-gray-400 hidden md:inline text-xs">C5K.ec</a>
-                    <a href="#" class="hover:text-gray-400 hidden md:inline text-xs">C5K.nl</a>
-                    <a href="#" class="hover:text-gray-400 hidden md:inline text-xs">More Sites</a>
+                    <a href="#" class="hover:text-gray-400 uppercase hidden md:inline text-xs">C5K.co</a>
+                    <a href="#" class="hover:text-gray-400 uppercase hidden md:inline text-xs">C5K.ec</a>
+                    <a href="#" class="hover:text-gray-400 uppercase hidden md:inline text-xs">C5K.nl</a>
+                    <a href="#" class="hover:text-gray-400 uppercase hidden md:inline text-xs">More Sites</a>
                 </div>
 
                 <!-- Right: Show JOIN C5K Always, Hide Other Links on Mobile -->
@@ -106,6 +111,7 @@
                     </a>
                 </div>
 
+<<<<<<< HEAD
                 <!-- Center: Search Bar -->
                 <div class="flex-grow mx-4 flex justify-center">
                     <form action="" method="GET" class="w-1/2 relative flex">
@@ -118,12 +124,26 @@
                         </button>
                     </form>
                 </div>
+=======
+            <!-- Center: Search Bar -->
+            <div class="flex-grow mx-4 flex justify-center">
+                <form action="" method="GET" class="w-1/2 relative flex">
+                    <input type="text" name="query" placeholder="Search"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-[#007C92] transition duration-300 placeholder:font-bold">
+
+                    <button type="submit"
+                        class="ml-2 bg-[#007C92] text-white font-bold px-4 py-2 rounded-md hover:bg-[#005f73] transition duration-300">
+                        Search
+                    </button>
+                </form>
+            </div>
+>>>>>>> 9c28da84a71675402d44ad91806f57be865d2184
 
 
 
                 <!-- Right: Social Icons -->
                 <div class="flex items-center space-x-4">
-                    <a href="#" class="text-[#007C92] text-xl"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.facebook.com/share/1KDbQAE6Ro/" target="_blank" class="text-[#007C92] text-xl"><i class="fab fa-facebook"></i></a>
                     <a href="#" class="text-[#007C92] text-xl"><i class="fab fa-twitter"></i></a>
                     <!-- Fixed typo -->
                     <a href="#" class="text-[#007C92] text-xl"><i class="fab fa-instagram"></i></a>
