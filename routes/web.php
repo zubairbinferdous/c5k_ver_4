@@ -73,9 +73,7 @@ Route::middleware(['XSS'])->group(function () {
 
     // Route::get('/current-issue/{id}/current_issue_list/{volumeId}/issu-details/{issueId}', 'PageController@single_issue')->name('single.issue');
     // Route::get('/current-issue/{id}/current_issue_list/{volumeId}/issu-details/{issueId}', 'PageController@article_issue')->name('article.issue');
-
-
-    Route::get('/{id}/{volumeId}/{issueId}/article/{Article_ID?}', 'PageController@single_issue')->name('single.issue');
+    Route::get('/{id}/{volumeId}/{issueId}/issue/article={article?}', 'PageController@single_issue')->name('single.issue');
 
 
     Route::get('/current-issue/{id}/current_issue_list/{volumeId}/issue-articles/{issueId}', 'PageController@article_issue')->name('article.issue');

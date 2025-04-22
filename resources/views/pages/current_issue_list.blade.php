@@ -1,15 +1,21 @@
 @extends('./layouts.master')
 @section('userContent')
     @include('pages.page_header_nav')
-    <div class="container mx-auto py-10 px-4">
+    <div class="containers mx-auto py-10 px-4">
         @if ($volume_list_issue->isNotEmpty())
             @foreach ($volume_list_issue as $issue)
+                {{-- @dd($issue->paper) --}}
                 <div class="bg-white border border-gray-200 rounded-lg hover:bg-gray-100 transition mb-6">
                     <div class="p-6">
                         <!-- Header -->
                         <div class="flex items-start mb-4">
                             <h1 class="text-2xl font-bold leading-snug relative font-serif">
-                                <a href="{{ route('single.issue', ['id' => $journal->id, 'volumeId' => $issue->id, 'issueId' => $issue->issu_no]) }}"
+                                <a href="{{ route('single.issue', [
+                                    'id' => $journal->id,
+                                    'volumeId' => $issue->id,
+                                    'issueId' => $issue->issu_no,
+                                    'article' => $issue->paper,
+                                ]) }}"
                                     class="text-black no-underline border-b-2 border-transparent hover:border-black transition-all duration-300 inline-block pb-1">
                                     {{ $issue->articles_title }}
                                 </a>
