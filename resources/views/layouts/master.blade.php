@@ -47,6 +47,7 @@
     <link rel="stylesheet" href="{{ asset('/frontend/css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('public/frontend/css/custom.css') }}">
     @stack('add-css')
+    @stack('add-css')
 
 </head>
 
