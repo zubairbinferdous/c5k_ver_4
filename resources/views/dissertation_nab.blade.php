@@ -1,4 +1,4 @@
-<section class="mt-1 bg-[#222E3E]">
+<section class="mt-5 bg-[#222E3E]">
     <div class="container mx-auto px-1">
         <div class="flex justify-center items-center">
             <h3 class="text-white text-center py-2 text-lg md:text-2xl font-semibold"> C5K Thesis Publishing</h3>
