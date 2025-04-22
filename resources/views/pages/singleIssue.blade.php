@@ -1,10 +1,15 @@
 @extends('./layouts.master')
 
 @push('add-css')
+<<<<<<< HEAD
+=======
+
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
     <style>
         .main-sect-issu {
             border-top: 3px solid black;
         }
+<<<<<<< HEAD
 
         .shadow {
             box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
@@ -13,41 +18,70 @@
         /* .body-part{
                     width: 66.67%;
                 } */
+=======
+        .shadow{
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+        }
+        /* .body-part{
+            width: 66.67%;
+        } */
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
         .banner-section {
             background-color: #f8f9fa;
             border-bottom: 1px solid #cccccc;
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
         .logo-img {
             height: 180px;
             width: 180px;
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
         .logo-img img {
             height: 180px;
             width: 180px;
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
         .journal-name {
             font-family: Georgia, serif;
             font-size: 18px;
             font-weight: 600;
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
         .journal-name a {
             text-decoration: none;
             color: black;
         }
+<<<<<<< HEAD
 
         .text-primary {
             color: #007bff !important;
         }
 
+=======
+        .text-primary {
+            color: #007bff !important;
+        }
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
         .image-img {
             height: 100px;
             width: 100px;
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
         .single-issu-section .article-title {
             font-family: Georgia, serif;
             font-size: 24px;
@@ -57,11 +91,17 @@
             margin-top: 10px;
             font-family: "Georgia", serif;
         }
+<<<<<<< HEAD
 
         .author-details {
             padding: 0 32px
         }
 
+=======
+        .author-details{
+            padding: 0 32px
+        }
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
         .main-sect-issu .author-list a {
             text-decoration: none;
             color: #0d6efd;
@@ -69,19 +109,29 @@
             margin-right: 3px;
             font-weight: 400;
         }
+<<<<<<< HEAD
 
         sub,
         sup {
+=======
+        sub, sup {
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
             position: relative;
             font-size: 75%;
             line-height: 0;
             vertical-align: baseline;
         }
+<<<<<<< HEAD
 
         sup {
             top: -.5em;
         }
 
+=======
+        sup {
+            top: -.5em;
+        }
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
         .abstract-section {
             padding: 15px;
             font-size: 16px;
@@ -91,7 +141,10 @@
             border-radius: 8px;
             margin-bottom: 30px;
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
         .main-sect-issu .custom-link a {
             font-family: 'Merriweather', "Times New Roman", Georgia, Garamond, serif;
             display: block;
@@ -106,8 +159,12 @@
             transition: color 0.3s ease, border-color 0.3s ease;
             margin-bottom: 4px;
         }
+<<<<<<< HEAD
 
         .table_color {
+=======
+        .table_color{
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
             background: #0056b3;
             color: #fff !important;
             border: none;
@@ -117,12 +174,18 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
         .table_color.active {
             background: #FAF400 !important;
             color: #000 !important;
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
         .card {
             position: relative;
             display: -ms-flexbox;
@@ -136,14 +199,20 @@
             border: 1px solid rgba(0, 0, 0, .125);
             border-radius: .25rem;
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
         .card-body {
             -ms-flex: 1 1 auto;
             flex: 1 1 auto;
             min-height: 1px;
             padding: 1.25rem;
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
         .stats-card {
             position: relative;
             display: flex;
@@ -151,12 +220,18 @@
             align-items: center;
             text-align: center;
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
         .stats-card img {
             width: 130px;
             height: auto;
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
         .stats-card span {
             position: absolute;
             top: 50%;
@@ -168,6 +243,10 @@
             border-radius: 8px;
         }
     </style>
+<<<<<<< HEAD
+=======
+
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
 @endpush
 
 @section('userContent')
@@ -185,6 +264,7 @@
 
                             <div class="w-full lg:w-6/12 text-center">
                                 <div class="journal-name">
+<<<<<<< HEAD
                                     <a href="https://www.c5k.com/academic-journal"
                                         class="text-lg font-semibold hover:underline">
                                         Demographic Research and Social Development Reviews
@@ -193,13 +273,26 @@
                                 <h6 class="mt-3 text-sm">
                                     <span class="text-primary">Volume 1, Issue 1</span>,
                                     27 August, 2024
+=======
+                                <a href="https://www.c5k.com/academic-journal" class="text-lg font-semibold hover:underline">
+                                    Demographic Research and Social Development Reviews
+                                </a>
+                                </div>
+                                <h6 class="mt-3 text-sm">
+                                <span class="text-primary">Volume 1, Issue 1</span>,
+                                27 August, 2024
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
                                 </h6>
                             </div>
 
                             <div class="w-full lg:w-3/12 text-center">
                                 <a href="{{ route('journal.show', ['slug' => $journal->slug, 'id' => $journal->id]) }}">
+<<<<<<< HEAD
                                     <img src="{{ asset('public/backend/journal/' . $journal->journal_image) }}"
                                         class="image-img mx-auto" />
+=======
+                                <img src="{{ asset('public/backend/journal/' . $journal->journal_image) }}" class="image-img mx-auto" />
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
                                 </a>
                             </div>
                         </div>
@@ -218,6 +311,7 @@
                                 <a href="#" class="no-underline text-black flex items-center">
                                     {{ $author->author_name }}
                                     <sup>{{ $author->affiliation_number }}</sup>
+<<<<<<< HEAD
 
                                     @if ($loop->first)
                                         <!-- User and Mail icons for the first author -->
@@ -235,6 +329,23 @@
                                             <path
                                                 d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
                                             <path d="M3 7l9 6l9 -6" />
+=======
+                        
+                                    @if ($loop->first)
+                                        <!-- User and Mail icons for the first author -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-1 text-gray-600" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                            <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"/>
+                                            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"/>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-1 text-gray-600 cursor-pointer"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                            onclick="openSideDrawer()">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                            <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"/>
+                                            <path d="M3 7l9 6l9 -6"/>
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
                                         </svg>
                                     @endif
                                 </a>
@@ -257,7 +368,13 @@
                         @foreach ($affiliations as $index => $affiliation)
                             <p class="mb-2 text-gray-700 leading-relaxed">
                                 <sup class="text-sm align-top">{{ $index + 1 }}</sup>
+<<<<<<< HEAD
                                 {{ collect([$affiliation->department, $affiliation->university, $affiliation->address])->filter(fn($value) => !empty($value))->join(', ') }}
+=======
+                                {{ collect([$affiliation->department, $affiliation->university, $affiliation->address])
+                                    ->filter(fn($value) => !empty($value))
+                                    ->join(', ') }}
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
                             </p>
                         @endforeach
                     </div>
@@ -268,6 +385,7 @@
                             <div>
                                 {{ Str::limit($issuDetails->description, 1500, '...') ?? 'No abstract available.' }}
                             </div>
+<<<<<<< HEAD
                         </div>
 
                         <div class="flex flex-col">
@@ -276,6 +394,16 @@
                                 {{ $issuDetails->keyword ?? 'AI, Business, Artificial intelligence, Algorithms, Data privacy' }}
                             </p>
                         </div>
+=======
+                        </div>
+                    
+                        <div class="flex flex-col">
+                            <p class="mb-0 font-medium">Keywords:&nbsp;</p>
+                            <p class="text-black mt-2 text-md pb-5">
+                                {{ $issuDetails->keyword ?? 'AI, Business, Artificial intelligence, Algorithms, Data privacy' }}
+                            </p>
+                        </div>
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
                     </div>
                 </div>
             </div>
@@ -290,7 +418,11 @@
                             <div class="mb-4">
                                 <!-- Download PDF -->
                                 <a href="{{ route('download_pdf', ['file' => $issuDetails->file_path]) }}"
+<<<<<<< HEAD
                                     class="block w-full text-left py-3 mb-3 bg-[#FAF400] hover:bg-[#FAF400] text-black font-semibold rounded-md transition duration-200">
+=======
+                                   class="block w-full text-left py-3 mb-3 bg-[#FAF400] hover:bg-[#FAF400] text-black font-semibold rounded-md transition duration-200">
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
                                     <div class="flex justify-between items-center px-4">
                                         <div>
                                             <strong class="block text-[24px]">Download This Article</strong>
@@ -299,11 +431,19 @@
                                         <i class="bi bi-download text-2xl"></i>
                                     </div>
                                 </a>
+<<<<<<< HEAD
 
                                 <!-- HTML Article -->
                                 <div>
                                     <a href="#" target="_blank"
                                         class="block w-full text-left py-3 bg-cyan-600 hover:bg-cyan-700 text-white font-medium rounded-md transition duration-200 text-[26px] px-4 cursor-pointer">
+=======
+                            
+                                <!-- HTML Article -->
+                                <div>
+                                    <a href="#" target="_blank"
+                                       class="block w-full text-left py-3 bg-cyan-600 hover:bg-cyan-700 text-white font-medium rounded-md transition duration-200 text-[26px] px-4 cursor-pointer">
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
                                         <i class="bi bi-file-text mr-2"></i>
                                         Article HTML
                                     </a>
@@ -325,6 +465,7 @@
                                                     </select>
                                                     <button class="btn btn-sm ml-2 btn-primary">Go</button>
                                                 </div>
+<<<<<<< HEAD
                                             </div>
                                         </div>
     
@@ -443,6 +584,100 @@
                                                             <path
                                                                 d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3">
                                                             </path>
+=======
+                                            </div>
+                                        </div>
+    
+                                        <!-- Share Section -->
+                                        <div class="mb-4">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <h2 class="h6 text-black mb-0">Share</h2>
+                                                <div class="d-flex align-items-center gap-">
+                                                    <!-- Facebook Icon -->
+    
+                                                    <!-- Email Icon -->
+                                                    <a href="mailto:example@example.com" class="text-danger  mr-2 ml-2" aria-label="Share via Email">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-mail">
+                                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                            <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path>
+                                                            <path d="M3 7l9 6l9 -6"></path>
+                                                        </svg>
+                                                    </a>
+                                                    <a href="www.linkedin.com" class="text-danger  mr-2 ml-2" aria-label="Share via Email">
+                                                        </a><a href="#" class="text-primary mr-2 ml-2" aria-label="Share on LinkedIn">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin">
+                                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                                <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                                                                <line x1="8" y1="11" x2="8" y2="16"></line>
+                                                                <line x1="8" y1="8" x2="8" y2="8.01"></line>
+                                                                <line x1="12" y1="16" x2="12" y2="11"></line>
+                                                                <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+                                                            </svg>
+                                                        </a>
+    
+                                                    
+    
+                                                    <a href="#" class="text-primary mr-2 ml-2" aria-label="Share on Facebook">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook">
+                                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                            <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> --}}
+
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <div class="container py-4">
+                                        <!-- Citation Section -->
+                                        <div class="mb-4">
+                                            <div class="flex items-center justify-between">
+                                                <h2 class="text-black text-sm font-semibold mb-0">Citation</h2>
+                                                <div class="flex items-center gap-2">
+                                                    <select class="border border-[#18181d] p-1 form-select form-select-sm w-auto" aria-label="Citation format" >
+                                                        <option value="bibtex" selected="">BibTeX</option>
+                                                        <option value="ris">RIS</option>
+                                                        <option value="endnote">EndNote</option>
+                                                    </select>
+                                                    <button class="btn btn-sm ml-2 btn-primary text-white bg-blue-600 border-blue-700 py-1 px-2">Go</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                            
+                                        <!-- Share Section -->
+                                        <div class="mb-4">
+                                            <div class="flex items-center justify-between">
+                                                <h2 class="text-black text-sm font-semibold mb-0">Share</h2>
+                                                <div class="flex items-center gap-2">
+                                                    <!-- Email Icon -->
+                                                    <a href="mailto:example@example.com" class="text-red-500 mx-2" aria-label="Share via Email">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-mail">
+                                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                            <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path>
+                                                            <path d="M3 7l9 6l9 -6"></path>
+                                                        </svg>
+                                                    </a>
+                                                    <!-- LinkedIn Icon -->
+                                                    <a href="www.linkedin.com" class="text-blue-600 mx-2" aria-label="Share on LinkedIn">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin">
+                                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                            <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                                                            <line x1="8" y1="11" x2="8" y2="16"></line>
+                                                            <line x1="8" y1="8" x2="8" y2="8.01"></line>
+                                                            <line x1="12" y1="16" x2="12" y2="11"></line>
+                                                            <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+                                                        </svg>
+                                                    </a>
+                                                    <!-- Facebook Icon -->
+                                                    <a href="#" class="text-blue-600 mx-2" aria-label="Share on Facebook">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook">
+                                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                            <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
                                                         </svg>
                                                     </a>
                                                 </div>
@@ -451,6 +686,7 @@
                                     </div>
                                 </div>
                             </div>
+<<<<<<< HEAD
 
                             <div class="my-3">
                                 <div
@@ -464,6 +700,19 @@
                                     <!-- Creative Commons Badge -->
                                     <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank"
                                         class="cc-badge text-[#007bff] hover:underline hover:decoration-solid ml-auto flex items-center">
+=======
+                            
+                            <div class="my-3">
+                                <div class="flex items-center border p-3 gap-3 bg-white shadow-md rounded-sm shadow-sm bg-light">
+                                    <!-- Open Access Icon -->
+                                    <div>
+                                        <img style="{{ 'height:40px' }}"
+                                        src={{ asset('public/frontend/img/openaccess.png') }} />
+                                    </div>
+                                    <span class="font-semibold mr-2">This article is Open Access</span>
+                                    <!-- Creative Commons Badge -->
+                                    <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" class="cc-badge text-[#007bff] hover:underline hover:decoration-solid ml-auto flex items-center">
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
                                         <span class="ml-2">CC</span> BY-NC
                                     </a>
                                 </div>
@@ -475,22 +724,38 @@
                                     <dl class="flex flex-wrap gap-y-2">
                                         <div class="w-full md:basis-[35%] font-bold">Article Type</div>
                                         <div class="w-full md:basis-[55%] text-blue-600">Research Paper</div>
+<<<<<<< HEAD
 
+=======
+                                
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
                                         <div class="w-full md:basis-[35%] font-bold">Submitted</div>
                                         <div class="w-full md:basis-[55%] text-blue-600">
                                             {{ \Carbon\Carbon::parse($issuDetails->submited_date)->format('d F, Y') }}
                                         </div>
+<<<<<<< HEAD
 
+=======
+                                
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
                                         <div class="w-full md:basis-[35%] font-bold">Revised</div>
                                         <div class="w-full md:basis-[55%] text-blue-600">
                                             {{ \Carbon\Carbon::parse($issuDetails->revised_date)->format('d F, Y') }}
                                         </div>
+<<<<<<< HEAD
 
+=======
+                                
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
                                         <div class="w-full md:basis-[35%] font-bold">Accepted</div>
                                         <div class="w-full md:basis-[50%] text-blue-600">
                                             {{ \Carbon\Carbon::parse($issuDetails->accepted_date)->format('d F, Y') }}
                                         </div>
+<<<<<<< HEAD
 
+=======
+                                
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
                                         <div class="w-full md:basis-[35%] font-bold">Online First</div>
                                         <div class="w-full md:basis-[55%] text-blue-600">
                                             {{ \Carbon\Carbon::parse($issuDetails->online_first)->format('d F, Y') }}
@@ -504,28 +769,46 @@
                                 <div class="flex flex-col md:flex-row justify-center items-center text-center gap-5">
                                     <!-- Total Views Card -->
                                     <div class="stats-card flex flex-col items-center shadow rounded p-4 bg-white w-40">
+<<<<<<< HEAD
                                         <img src="{{ asset('public/backend/logo/stats.jpg') }}" alt="Centered Image"
                                             class="mb-2" />
+=======
+                                        <img src="{{ asset('public/backend/logo/stats.jpg') }}" alt="Centered Image" class="mb-2" />
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
                                         <span class="text-blue-600 font-semibold text-lg">
                                             {{ number_format($viewCount / 1000, 1) }}k
                                         </span>
                                         <p class="text-sm mt-1">Total Views</p>
                                     </div>
+<<<<<<< HEAD
 
                                     <!-- Total Downloads Card -->
                                     <div class="stats-card flex flex-col items-center shadow rounded p-4 bg-white w-40">
                                         <img src="{{ asset('public/backend/logo/stats.jpg') }}" alt="Centered Image"
                                             class="mb-2" />
+=======
+                            
+                                    <!-- Total Downloads Card -->
+                                    <div class="stats-card flex flex-col items-center shadow rounded p-4 bg-white w-40">
+                                        <img src="{{ asset('public/backend/logo/stats.jpg') }}" alt="Centered Image" class="mb-2" />
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
                                         <span class="text-blue-600 font-semibold text-lg">
                                             {{ number_format($downloadCount / 1000, 1) }}k
                                         </span>
                                         <p class="text-sm mt-1">Downloads</p>
                                     </div>
+<<<<<<< HEAD
 
                                     <!-- Citations Card -->
                                     <div class="stats-card flex flex-col items-center shadow rounded p-4 bg-white w-40">
                                         <img src="{{ asset('public/backend/logo/stats.jpg') }}" alt="Centered Image"
                                             class="mb-2" />
+=======
+                            
+                                    <!-- Citations Card -->
+                                    <div class="stats-card flex flex-col items-center shadow rounded p-4 bg-white w-40">
+                                        <img src="{{ asset('public/backend/logo/stats.jpg') }}" alt="Centered Image" class="mb-2" />
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
                                         <span class="text-blue-600 font-semibold text-lg">0</span>
                                         <p class="text-sm mt-1">Citations</p>
                                     </div>
@@ -533,14 +816,24 @@
                             </div>
                         </div>
                     </div>
+<<<<<<< HEAD
 
                     {{-- Cited By --}}
                     <input type="radio" name="my_tabs_3" class="tab table_color" aria-label="Cited By" />
+=======
+                  
+                    {{-- Cited By --}}
+                    <input type="radio" name="my_tabs_3" class="tab table_color" aria-label="Cited By"  />
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
 
                     <div class="tab-content bg-base-100 border-base-300 p-6">
                         This tab lists articles citing this work.
                     </div>
+<<<<<<< HEAD
 
+=======
+                  
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
                     {{-- Related --}}
                     <input type="radio" name="my_tabs_3" class="tab table_color" aria-label="Related" />
                     <div class="tab-content bg-base-100 border-base-300 p-6">
@@ -549,7 +842,11 @@
                             @forelse ($relatedIssues as $related)
                                 <div class="mb-3 p-3 border rounded hover:bg-gray-50 transition">
                                     <a href="{{ route('single.issue', ['id' => $journal->id, 'volumeId' => $volumeId, 'issueId' => $related->id]) }}"
+<<<<<<< HEAD
                                         class="text-blue-600 hover:underline font-medium">
+=======
+                                       class="text-blue-600 hover:underline font-medium">
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
                                         {{ $related->title }}
                                     </a>
                                     <div class="text-sm text-gray-600">
@@ -565,11 +862,13 @@
             </div>
         </div>
     </div>
+
 @endsection
 
 @push('scripts')
     <script>
         function activateTab(index) {
+<<<<<<< HEAD
             const labels = document.querySelectorAll('.table_color');
 
             labels.forEach((label, i) => {
@@ -596,5 +895,33 @@
                 });
             });
         });
+=======
+        const labels = document.querySelectorAll('.table_color');
+
+        labels.forEach((label, i) => {
+            if (i === index) {
+                label.classList.add('active');
+            } else {
+                label.classList.remove('active');
+            }
+        });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const labels = document.querySelectorAll('.table_color');
+
+        // Call activateTab for the default checked one
+        labels.forEach((label, index) => {
+            if (label.checked) {
+                activateTab(index);
+            }
+
+            // Add change event to update on click
+            label.addEventListener('change', () => {
+                activateTab(index);
+            });
+        });
+    });
+>>>>>>> af086567884e3c272d8a7335401c62405c9f8fdb
     </script>
 @endpush

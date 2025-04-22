@@ -1,247 +1,283 @@
-<title>C5k |FAQ</title>
-@include('layout.header')
+@extends('./layouts.master')
 
-<style>
-   .faq-header {
-        text-align: center;
-        margin: 30px 0;
-          color:#0b50a1;
-              font-size:25px;
-              font-weight:600;
+@push('add-css')
+  <style>
+    .faq-container {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    border-radius: 6px;
+    }
 
+    h2 {
+    text-align: center;
+    color: #004080;
+    font-weight: bold;
+    margin-bottom: 20px;
     }
-  
-    .faq-header h3 {
-        font-size: 2rem !important;
-        color: white;
-    }
-    .card-header {
-        font-weight: bold;
-        background-color: #061f32; /* Accordion header background color */
-        color: #ffffff; /* Text color for the accordion header */
-        border: none;
-    }
-    .accordion-button {
-        color: #ffffff; /* Button text color */
-        background-color: #061f32; /* Button background color */
-    }
-    .accordion-button:hover {
-        background-color: #083348; /* Slightly lighter color on hover */
-        color: #ffffff; /* Text color remains white */
-    }
+
     .accordion-item {
-        border: 1px solid #dee2e6;
-        border-radius: 5px;
-        margin-bottom: 15px;
+    border-top: 1px solid #ccc;
     }
+
+    .accordion-header {
+    width: 100%;
+    text-align: left;
+    background-color: #002b45;
+    color: white;
+    padding: 12px 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.3s;
+    }
+
+    .accordion-header:hover {
+    background-color: #003b5c;
+    }
+
+    .accordion-header.active {
+    background-color: #002b45;
+    }
+
     .accordion-body {
-        font-size: 0.95rem;
-        line-height: 1.6;
-        background-color: #f8f9fa; /* Background color for the accordion body */
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    border: 1px solid #ccc;
+    border-top: none;
+    background-color: white;
+    transition: max-height 0.4s ease, padding 0.3s ease;
     }
-    h5, strong {
-        color: #061f32; /* Heading and strong text color */
+
+    .accordion-body.show {
+    max-height: 1000px; /* Big enough for content */
+    padding: 20px;
     }
-    .summary{
-        background-color:RGB(0, 160, 198);
-        border-radius:20px;
+
+    .accordion-body p {
+    margin: 10px 0;
     }
-</style>
 
-<body>
-        @include('dissertation_nab')
+    .accordion-body a {
+    color: #007bff;
+    text-decoration: none;
+    }
 
-<section>
-<div class="container pb-5">
-        <!-- FAQ Header -->
-        <div class="faq-header">
-            <h1>Frequently Asked Questions (FAQ)</h1>
-        </div>
+    .accordion-body ol, .accordion-body ul {
+    padding-left: 20px;
+    }
+  </style>
+@endpush
 
-        <!-- FAQ Accordion -->
-        <div class="accordion" id="faqAccordion">
-            <!-- General Section -->
-            <div class="card">
-                <div class="card-header" id="headingGeneral" data-toggle="collapse" data-target="#collapseGeneral" aria-expanded="true" aria-controls="collapseGeneral">
-                    <h5 class="mb-0 text-white">
-                            1. General
-                    </h5>
-                </div>
-                <div id="collapseGeneral" class="collapse show" aria-labelledby="headingGeneral" data-parent="#faqAccordion">
-                    <div class="card-body">
-                        <strong>1.1 How can I publish a manuscript or book with C5K?</strong>
-                        <p>Publishing with C5K involves these steps:</p>
-                        <ol>
-                            <li>Submit your manuscript via our online portal.</li>
-                            <li>Initial review by our editorial team.</li>
-                            <li>Agreement signing and editor assignment.</li>
-                            <li>Professional editing and formatting.</li>
-                            <li>Publishing in print and digital formats with global distribution.</li>
-                        </ol>
-                        <p>For detailed guidelines, contact us at <a href="mailto:contact@c5kpublishing.com">contact@c5kpublishing.com</a>.</p>
-                        <strong>1.2 What types of works does C5K publish?</strong>
-                        <p>We publish peer-reviewed journal articles, research monographs, dissertations, technical reports, and more from all disciplines.</p>
-                        <strong>1.3 Can older manuscripts be published?</strong>
-                        <p>Yes, provided the manuscript remains relevant and insightful.</p>
-                        <strong>1.4 What are the benefits of publishing with C5K?</strong>
-                        <ul>
-                            <li>Global visibility through indexing in major databases.</li>
-                            <li>Flexible copyright and licensing options.</li>
-                            <li>Enhanced academic credibility.</li>
-                            <li>Royalties from sales.</li>
-                            <li>Dedicated support throughout the publication process.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+@section('userContent')
 
-            <!-- Manuscript Submission Section -->
-            <div class="card">
-                <div class="card-header" id="headingSubmission"  data-toggle="collapse" data-target="#collapseSubmission" aria-expanded="false" aria-controls="collapseSubmission">
-                    <h5 class="mb-0 text-white">
-                            2. Manuscript Submission
-                    </h5>
-                </div>
-                <div id="collapseSubmission" class="collapse" aria-labelledby="headingSubmission" data-parent="#faqAccordion">
-                    <div class="card-body">
-                        <strong>2.1 What are the manuscript formatting requirements?</strong>
-                        <p>Manuscripts should follow these guidelines:</p>
-                        <ul>
-                            <li>Font: Times New Roman, 12 pt.</li>
-                            <li>Spacing: 1.5 lines.</li>
-                            <li>Margins: 1 inch on all sides.</li>
-                            <li>Graphics: High-resolution images (300 DPI).</li>
-                        </ul>
-                        <strong>2.2 Do you assist with editing and formatting?</strong>
-                        <p>Yes, we provide professional services to ensure compliance with global standards.</p>
-                        <strong>2.3 Can I submit a work-in-progress manuscript?</strong>
-                        <p>Yes, but the manuscript must be finalized before publication.</p>
-                        <strong>2.4 Will I have input in the final design and layout?</strong>
-                        <p>Yes, authors are consulted on cover art and layout decisions.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Rights and Licensing Section -->
-            <div class="card">
-                <div class="card-header" id="headingRights" data-toggle="collapse" data-target="#collapseRights" aria-expanded="false" aria-controls="collapseRights">
-                    <h5 class="mb-0 text-white">
-                            3. Rights and Licensing
-                    </h5>
-                </div>
-                <div id="collapseRights" class="collapse" aria-labelledby="headingRights" data-parent="#faqAccordion">
-                    <div class="card-body">
-                        <strong>3.1 Who retains the copyright of the published work?</strong>
-                        <p>Authors retain full copyright. We offer both traditional and open-access licensing options.</p>
-                        <strong>3.2 How are third-party rights handled?</strong>
-                        <p>Authors must secure permissions for copyrighted materials. Guidance is provided as needed.</p>
-                        <strong>3.3 Can I publish parts of my manuscript elsewhere?</strong>
-                        <p>Yes, under certain licensing agreements. Disclosure during submission is required.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Royalties and Sales Section -->
-            <div class="card">
-                <div class="card-header" id="headingRoyalties" data-toggle="collapse" data-target="#collapseRoyalties" aria-expanded="false" aria-controls="collapseRoyalties">
-                    <h5 class="mb-0 text-white">
-                            4. Royalties and Sales
-                    </h5>
-                </div>
-                <div id="collapseRoyalties" class="collapse" aria-labelledby="headingRoyalties" data-parent="#faqAccordion">
-                    <div class="card-body">
-                        <strong>4.1 Do authors receive royalties?</strong>
-                        <p>Yes, authors earn a percentage of net sales revenue, disbursed biannually with detailed statements.</p>
-                        <strong>4.2 How are book prices determined?</strong>
-                        <p>Pricing depends on manuscript length, production costs, and market demand.</p>
-                    </div>
-                </div>
-            </div>
-            
-            
-             <div class="card">
-        <div class="card-header" id="headingPostService" data-toggle="collapse" data-target="#collapsePostService" aria-expanded="false" aria-controls="collapsePostService">
-            <h5 class="mb-0 text-white">
-                    5. Post-Publication Services
-            </h5>
-        </div>
-        <div id="collapsePostService" class="collapse" aria-labelledby="headingPostService" data-parent="#faqAccordion">
-            <div class="card-body">
-                <strong>5.1 How does C5K promote published works?</strong>
-                <p>We promote works through:</p>
-                <ul>
-                    <li>Academic indexing on platforms like CrossRef and Google Scholar.</li>
-                    <li>Marketing via social media, email campaigns, and academic conferences.</li>
-                    <li>Listings in online bookstores and library catalogs.</li>
+<section class="bg-[#EAEDED]">
+    <div class="container mx-auto">
+        <nav class="flex flex-wrap items-center justify-between px-4 py-3">
+            <button class="block lg:hidden text-gray-700 focus:outline-none" @click="open = !open">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+  
+            <div class="w-full lg:flex lg:items-center lg:w-auto hidden lg:block" id="navbarSupportedContent">
+                <ul class="flex flex-col lg:flex-row w-full py-2 lg:py-0">
+                    <li class="mx-2 my-1 lg:my-0">
+                        <a href="{{ url('books') }}" class="text-gray-800 hover:text-blue-600 transition">Books</a>
+                    </li>
+                    <li class="mx-2 my-1 lg:my-0">
+                        <a href="{{ route('book.publish') }}" class="text-gray-800 hover:text-blue-600 transition">How
+                            To Publish</a>
+                    </li>
+                    <li class="mx-2 my-1 lg:my-0">
+                        <a href="{{ route('book.promote') }}"
+                            class="text-gray-800 hover:text-blue-600 transition">Promote</a>
+                    </li>
+                    <li class="mx-2 my-1 lg:my-0">
+                        <a href="{{ route('book.faq') }}" class="text-gray-800 hover:text-blue-600 transition">FAQ</a>
+                    </li>
                 </ul>
-                <strong>5.2 Can I request changes to a published work?</strong>
-                <p>Yes, minor revisions (e.g., author details or typographical errors) can be accommodated. Major updates may require a new edition.</p>
-                <strong>5.3 Can my work be translated or published in another language?</strong>
-                <p>Yes, translation and multi-language publishing are possible. Contact us to discuss specific needs and associated costs.</p>
             </div>
-        </div>
+        </nav>
     </div>
+</section>
 
-    <!-- Technical and Support Section -->
-    <div class="card">
-        <div class="card-header" id="headingTechnical" data-toggle="collapse" data-target="#collapseTechnical" aria-expanded="false" aria-controls="collapseTechnical">
-            <h5 class="mb-0 text-white">
-                    6. Technical and Support
-            </h5>
+
+<div class="faq-container px-5">
+    <h2 class="text-[2.5rem] my-[40px] font-bold">Frequently Asked Questions (FAQ)</h2>
+  
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-header active">1. General</button>
+        <div class="accordion-body show">
+          <p><strong>1.1 How can I publish a manuscript or book with C5K?</strong><br>
+            Publishing with C5K involves these steps:
+          </p>
+          <ol>
+            <li>Submit your manuscript via our online portal.</li>
+            <li>Initial review by our editorial team.</li>
+            <li>Agreement signing and editor assignment.</li>
+            <li>Professional editing and formatting.</li>
+            <li>Publishing in print and digital formats with global distribution.</li>
+          </ol>
+          <p>For detailed guidelines, contact us at <a href="mailto:contact@c5kpublishing.com">contact@c5kpublishing.com</a>.</p>
+  
+          <p><strong>1.2 What types of works does C5K publish?</strong><br>
+            We publish peer-reviewed journal articles, research monographs, dissertations, technical reports, and more from all disciplines.
+          </p>
+  
+          <p><strong>1.3 Can older manuscripts be published?</strong><br>
+            Yes, provided the manuscript remains relevant and insightful.
+          </p>
+  
+          <p><strong>1.4 What are the benefits of publishing with C5K?</strong></p>
+          <ul>
+            <li>Global visibility through indexing in major databases.</li>
+            <li>Flexible copyright and licensing options.</li>
+            <li>Enhanced academic credibility.</li>
+            <li>Royalties from sales.</li>
+            <li>Dedicated support throughout the publication process.</li>
+          </ul>
         </div>
-        <div id="collapseTechnical" class="collapse" aria-labelledby="headingTechnical" data-parent="#faqAccordion">
-            <div class="card-body">
-                <strong>6.1 What file formats are accepted?</strong>
-                <p>We accept files in Word (.doc/.docx) and PDF formats. Authors are encouraged to submit editable files to facilitate revisions.</p>
-                <strong>6.2 What support is available during the submission process?</strong>
-                <p>Our support team provides:</p>
-                <ul>
-                    <li>Assistance with technical issues.</li>
-                    <li>Clarifications on submission guidelines.</li>
-                    <li>Real-time updates via our author portal.</li>
-                </ul>
-                <p>Contact us at [email] for personalized assistance.</p>
-            </div>
+      </div>
+  
+      <div class="accordion-item">
+        <button class="accordion-header">2. Manuscript Submission</button>
+        <div class="accordion-body">
+            <strong>2.1 What are the manuscript formatting requirements?</strong>
+            <p>Manuscripts should follow these guidelines:</p>
+            <ul>
+                <li>Font: Times New Roman, 12 pt.</li>
+                <li>Spacing: 1.5 lines.</li>
+                <li>Margins: 1 inch on all sides.</li>
+                <li>Graphics: High-resolution images (300 DPI).</li>
+            </ul>
+            <strong>2.2 Do you assist with editing and formatting?</strong>
+            <p>Yes, we provide professional services to ensure compliance with global standards.</p>
+            <strong>2.3 Can I submit a work-in-progress manuscript?</strong>
+            <p>Yes, but the manuscript must be finalized before publication.</p>
+            <strong>2.4 Will I have input in the final design and layout?</strong>
+            <p>Yes, authors are consulted on cover art and layout decisions.</p>
         </div>
+      </div>
+  
+      <div class="accordion-item">
+        <button class="accordion-header">3. Rights and Licensing</button>
+        <div class="accordion-body">
+            <strong>3.1 Who retains the copyright of the published work?</strong>
+            <p>Authors retain full copyright. We offer both traditional and open-access licensing options.</p>
+            <strong>3.2 How are third-party rights handled?</strong>
+            <p>Authors must secure permissions for copyrighted materials. Guidance is provided as needed.</p>
+            <strong>3.3 Can I publish parts of my manuscript elsewhere?</strong>
+            <p>Yes, under certain licensing agreements. Disclosure during submission is required.</p>
+        </div>
+      </div>
+  
+      <div class="accordion-item">
+        <button class="accordion-header">4. Royalties and Sales</button>
+        <div class="accordion-body">
+            <strong>4.1 Do authors receive royalties?</strong>
+            <p>Yes, authors earn a percentage of net sales revenue, disbursed biannually with detailed statements.</p>
+            <strong>4.2 How are book prices determined?</strong>
+            <p>Pricing depends on manuscript length, production costs, and market demand.</p>
+        </div>
+      </div>
+  
+      <div class="accordion-item">
+        <button class="accordion-header">5. Post-Publication Services</button>
+        <div class="accordion-body">
+            <strong>5.1 How does C5K promote published works?</strong>
+            <p>We promote works through:</p>
+            <ul>
+                <li>Academic indexing on platforms like CrossRef and Google Scholar.</li>
+                <li>Marketing via social media, email campaigns, and academic conferences.</li>
+                <li>Listings in online bookstores and library catalogs.</li>
+            </ul>
+            <strong>5.2 Can I request changes to a published work?</strong>
+            <p>Yes, minor revisions (e.g., author details or typographical errors) can be accommodated. Major updates may require a new edition.</p>
+            <strong>5.3 Can my work be translated or published in another language?</strong>
+            <p>Yes, translation and multi-language publishing are possible. Contact us to discuss specific needs and associated costs.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">6. Technical and Support</button>
+        <div class="accordion-body">
+            <strong>6.1 What file formats are accepted?</strong>
+            <p>We accept files in Word (.doc/.docx) and PDF formats. Authors are encouraged to submit editable files to facilitate revisions.</p>
+            <strong>6.2 What support is available during the submission process?</strong>
+            <p>Our support team provides:</p>
+            <ul>
+                <li>Assistance with technical issues.</li>
+                <li>Clarifications on submission guidelines.</li>
+                <li>Real-time updates via our author portal.</li>
+            </ul>
+            <p>Contact us at [email] for personalized assistance.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">7. Sales and Distribution</button>
+        <div class="accordion-body">
+            <strong>7.1 Where will my work be available?</strong>
+            <p>C5K ensures global distribution through:</p>
+            <ul>
+                <li>Online platforms (Amazon, Google Books, etc.).</li>
+                <li>Academic databases.</li>
+                <li>Partnerships with bookstores and library networks.</li>
+            </ul>
+            <strong>7.2 How can I track my work’s performance?</strong>
+            <p>Authors receive detailed sales reports via the author dashboard. Depending on the distribution platform, real-time metrics may also be available.</p>
+        </div>
+      </div>
     </div>
+</div>
 
-    <!-- Sales and Distribution Section -->
-    <div class="card">
-        <div class="card-header" id="headingSales" data-toggle="collapse" data-target="#collapseSales" aria-expanded="false" aria-controls="collapseSales">
-            <h5 class="mb-0 text-white">
-                    7. Sales and Distribution
-                
-            </h5>
-        </div>
-        <div id="collapseSales" class="collapse" aria-labelledby="headingSales" data-parent="#faqAccordion">
-            <div class="card-body">
-                <strong>7.1 Where will my work be available?</strong>
-                <p>C5K ensures global distribution through:</p>
-                <ul>
-                    <li>Online platforms (Amazon, Google Books, etc.).</li>
-                    <li>Academic databases.</li>
-                    <li>Partnerships with bookstores and library networks.</li>
-                </ul>
-                <strong>7.2 How can I track my work’s performance?</strong>
-                <p>Authors receive detailed sales reports via the author dashboard. Depending on the distribution platform, real-time metrics may also be available.</p>
-            </div>
-        </div>
+  
+<section class="px-5">
+    <div class="mx-auto my-4 p-6 bg-cyan-600 text-white rounded-2xl shadow-md">
+        <h2 class="text-center text-2xl text-white font-bold mb-2">Summary</h2>
+        <p class="text-center text-sm md:text-base">
+        C5K Journal Publishing House is committed to supporting authors at every stage, from submission to post-publication.
+        Our FAQ reflects our dedication to transparency, quality, and accessibility, ensuring a seamless experience for our global author community.
+        </p>
     </div>
-
-        </div>
-    </div></section>
-    <section class="p-4 my-2 container  shadow-sm summary">
-        <h2 class="text-center text-white">Summary</h2>
-        <p class="text-center text-white">C5K Journal Publishing House is committed to supporting authors at every stage, from submission to post-publication. Our FAQ reflects our dedication to transparency, quality, and accessibility, ensuring a seamless experience for our global author community.</p>
-    </section>
+</section>
 
 
+@endsection
 
 
-@include('layout.footer_nav')
-@include('layout.footer')
-@include('layout.js')
-
-</body>
-
-</html>
+@push('scripts')
+    <script>
+        const headers = document.querySelectorAll('.accordion-header');
+    
+        headers.forEach(header => {
+        header.addEventListener('click', () => {
+            const currentActive = document.querySelector('.accordion-header.active');
+    
+            // Collapse the currently open section (if any)
+            if (currentActive && currentActive !== header) {
+            currentActive.classList.remove('active');
+            const currentBody = currentActive.nextElementSibling;
+            currentBody.classList.remove('show');
+            currentBody.style.maxHeight = null;
+            }
+    
+            // Toggle current section
+            header.classList.toggle('active');
+            const body = header.nextElementSibling;
+    
+            if (body.classList.contains('show')) {
+            body.classList.remove('show');
+            body.style.maxHeight = null;
+            } else {
+            body.classList.add('show');
+            body.style.maxHeight = body.scrollHeight + 'px';
+            }
+        });
+        });
+    </script>
+@endpush

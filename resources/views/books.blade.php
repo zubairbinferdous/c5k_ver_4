@@ -169,7 +169,7 @@
           </svg>
         </div>
         <h3 class="text-lg font-semibold mb-2">Over the World Book Publishing Service</h3>
-        <p class="text-gray-600 text-sm">With easy steps and expert advice, publish your work online. Benefit
+        <p class="text-gray-600 text-sm text-justify">With easy steps and expert advice, publish your work online. Benefit
           from
           high-quality editing and personalized assistance tailored to your specific needs.</p>
       </div>
@@ -185,7 +185,7 @@
           </svg>
         </div>
         <h3 class="text-lg font-semibold mb-2">Worldwide Marketing Policy</h3>
-        <p class="text-gray-600 text-sm">Ensure international recognition for your book with our comprehensive
+        <p class="text-gray-600 text-sm text-justify">Ensure international recognition for your book with our comprehensive
           worldwide
           marketing strategy. Reach a global audience effectively.</p>
       </div>
@@ -201,7 +201,7 @@
           </svg>
         </div>
         <h3 class="text-lg font-semibold mb-2">Publish with Expert Assistance</h3>
-        <p class="text-gray-600 text-sm">Our experts provide complete support throughout the publishing
+        <p class="text-gray-600 text-sm text-justify">Our experts provide complete support throughout the publishing
           process.
           Let us
           help you reach your goals with ease.</p>
@@ -218,7 +218,7 @@
           </svg>
         </div>
         <h3 class="text-lg font-semibold mb-2">Print-on-Demand Service</h3>
-        <p class="text-gray-600 text-sm">We use eco-friendly print-on-demand technology to reduce waste and
+        <p class="text-gray-600 text-sm text-justify">We use eco-friendly print-on-demand technology to reduce waste and
           ensure
           cost-effective production of your book.</p>
       </div>
