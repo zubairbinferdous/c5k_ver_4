@@ -73,18 +73,18 @@
     <!-- Swiper Init Script -->
 
 
-    <section class="py-10 bg-cover bg-center" style="background-image: url('{{ asset('public/backend/footer.jpg') }}');" >
-        <div class="container mx-auto text-center text px-4" style="color:white">
-          <h4 class="text-2xl font-semibold mb-4">Discover Our World-wide Academic Collection</h4>
-          <p class="max-w-3xl mx-auto mb-8 text-sm sm:text-base leading-relaxed">
-            We take pride in presenting a wide range of academic works spanning numerous disciplines.
-            From business to information technology, sociology to economics, science to engineering,
-            our catalog reflects the richness and diversity of contemporary university/institute research.
-            Whether you’re a student, academic researcher, scientific community member, or knowledge enthusiast,
-            you’ll certainly find titles that pique your curiosity and deepen your understanding.
-          </p>
-        </div>
+    <div class="container mx-auto text-center text px-4 mt-12" style="color:black">
+        <h4 class="text-2xl font-semibold mb-4 text">Discover Our World-wide Academic Collection</h4>
+        <p class="max-w-3xl mx-auto mb-8 text-sm sm:text-base leading-relaxed">
+          We take pride in presenting a wide range of academic works spanning numerous disciplines.
+          From business to information technology, sociology to economics, science to engineering,
+          our catalog reflects the richness and diversity of contemporary university/institute research.
+          Whether you’re a student, academic researcher, scientific community member, or knowledge enthusiast,
+          you’ll certainly find titles that pique your curiosity and deepen your understanding.
+        </p>
+    </div>
       
+    <section class="py-10 bg-cover bg-center" style="background-image: url('{{ asset('public/backend/footer.jpg') }}');" >
         <!-- Slider Section -->
         <div class="py-6">
           <div class="container mx-auto px-4">

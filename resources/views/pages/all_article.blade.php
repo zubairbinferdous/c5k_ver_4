@@ -60,6 +60,10 @@
                                                     Download PDF
                                                 </a>
                                             @endif
+                                            {{-- <a href="{{ route('article.issue', ['id' => $journal->id, 'volumeId' => $issue->id, 'issueId' => $issue->issu_no]) }}" target="_blank"
+                                                class="px-4 py-2 rounded bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition">
+                                                Article HTML
+                                            </a> --}}
                                             <a target="_blank"
                                                 class="px-4 py-2 rounded bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition">
                                                 Article HTML

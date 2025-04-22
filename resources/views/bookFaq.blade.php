@@ -52,8 +52,7 @@
     }
 
     .accordion-body.show {
-    max-height: 1000px; /* Big enough for content */
-    padding: 20px;
+      padding: 20px;
     }
 
     .accordion-body p {
@@ -251,33 +250,39 @@
 
 
 @push('scripts')
-    <script>
-        const headers = document.querySelectorAll('.accordion-header');
-    
-        headers.forEach(header => {
-        header.addEventListener('click', () => {
-            const currentActive = document.querySelector('.accordion-header.active');
-    
-            // Collapse the currently open section (if any)
-            if (currentActive && currentActive !== header) {
-            currentActive.classList.remove('active');
-            const currentBody = currentActive.nextElementSibling;
-            currentBody.classList.remove('show');
-            currentBody.style.maxHeight = null;
-            }
-    
-            // Toggle current section
-            header.classList.toggle('active');
-            const body = header.nextElementSibling;
-    
-            if (body.classList.contains('show')) {
-            body.classList.remove('show');
-            body.style.maxHeight = null;
-            } else {
-            body.classList.add('show');
-            body.style.maxHeight = body.scrollHeight + 'px';
-            }
-        });
-        });
-    </script>
+<script>
+  const headers = document.querySelectorAll('.accordion-header');
+
+  headers.forEach(header => {
+    header.addEventListener('click', () => {
+      const currentActive = document.querySelector('.accordion-header.active');
+
+      if (currentActive && currentActive !== header) {
+        currentActive.classList.remove('active');
+        const currentBody = currentActive.nextElementSibling;
+        currentBody.classList.remove('show');
+        currentBody.style.maxHeight = null;
+      }
+
+      header.classList.toggle('active');
+      const body = header.nextElementSibling;
+
+      if (body.classList.contains('show')) {
+        body.classList.remove('show');
+        body.style.maxHeight = null;
+      } else {
+        body.classList.add('show');
+        body.style.maxHeight = body.scrollHeight + 30 + "px";
+      }
+    });
+  });
+
+  // 👇 Set initial open section height (first one)
+  const initialActive = document.querySelector('.accordion-header.active');
+  if (initialActive) {
+    const initialBody = initialActive.nextElementSibling;
+    initialBody.classList.add('show');
+    initialBody.style.maxHeight = initialBody.scrollHeight + "px";
+  }
+</script>
 @endpush
