@@ -185,14 +185,14 @@
 
                             <div class="w-full lg:w-6/12 text-center">
                                 <div class="journal-name">
-                                    <a href="https://www.c5k.com/academic-journal"
+                                    <a href="{{ url('academic-journal') }}"
                                         class="text-lg font-semibold hover:underline">
-                                        Demographic Research and Social Development Reviews
+                                        {{ $journal->title }}
                                     </a>
                                 </div>
                                 <h6 class="mt-3 text-sm">
                                     <span class="text-primary">Volume 1, Issue 1</span>,
-                                    27 August, 2024
+                                    {{ \Carbon\Carbon::parse($issuDetails->online_first)->format('d F, Y') }}
                                 </h6>
                             </div>
 
@@ -227,13 +227,17 @@
                                             <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
                                             <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
                                         </svg>
+
+                                        <!-- Drawer Trigger Button -->
                                         <svg xmlns="http://www.w3.org/2000/svg"
-                                            class="w-5 h-5 ml-1 text-gray-600 cursor-pointer" fill="none"
-                                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                            class="w-6 h-6 text-gray-600 cursor-pointer"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                            stroke-width="2"
                                             onclick="openSideDrawer()">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                            <path
-                                                d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
+                                            <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
                                             <path d="M3 7l9 6l9 -6" />
                                         </svg>
                                     @endif
@@ -245,6 +249,24 @@
                         </div>
                     </div>
 
+
+                    <!-- Sidebar Drawer (LEFT) -->
+                    <div id="sideDrawer" class="fixed top-0 left-0 h-full w-80 bg-white shadow-lg z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
+                        <div class="p-6">
+                            <button onclick="closeSideDrawer()" class="text-gray-700 text-xl font-bold float-right">&times;</button>
+                            <h5 class="text-lg font-semibold mb-4">Author's Details</h5>
+                            <p><strong>Name:</strong> {{ $authorsWithAffiliation->first()->author_name }}</p>
+                            <p><strong>Email:</strong>
+                                <a href="mailto:{{ $authorsWithAffiliation->first()->email }}" class="text-blue-600">
+                                    {{ $authorsWithAffiliation->first()->email }}
+                                </a>
+                            </p>
+                            <p><strong>Department:</strong> {{ $authorsWithAffiliation->first()->department }}</p>
+                            <p><strong>Affiliation Number:</strong> {{ $authorsWithAffiliation->first()->affiliation_number }}</p>
+                            <p><strong>Address:</strong> {{ $authorsWithAffiliation->first()->address }}</p>
+                        </div>
+</div>
+
                     <div class="custom-link mb-3">
                         <a href="#">
                             https://doi.org/10.103/xxx
@@ -252,7 +274,7 @@
                     </div>
 
                     <!-- Affiliations Section -->
-                    <div class="mt-3 mb-5" id="moreContent"> <!-- Add `block` via JS to show -->
+                    <div id="moreContent" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
                         <h5 class="text-lg font-semibold text-gray-800 mt-3">Affiliations</h5>
                         @foreach ($affiliations as $index => $affiliation)
                             <p class="mb-2 text-gray-700 leading-relaxed">
@@ -261,6 +283,11 @@
                             </p>
                         @endforeach
                     </div>
+
+                    <!-- Show More/Less Button -->
+                    <button id="toggleButton" onclick="toggleMoreContent()" class="text-blue-600 font-semibold mb-3 underline decoration-2">
+                        Show More
+                    </button>
 
                     <div class="mb-6">
                         <div class="mb-4">
@@ -510,7 +537,48 @@
 @endsection
 
 @push('scripts')
+
     <script>
+        let isExpanded = false;
+
+        function toggleMoreContent() {
+            const content = document.getElementById("moreContent");
+            const button = document.getElementById("toggleButton");
+
+            if (isExpanded) {
+                // Collapse
+                content.style.maxHeight = "0";
+                button.textContent = "Show More";
+            } else {
+                // Expand
+                content.style.maxHeight = content.scrollHeight + "px";
+                button.textContent = "Show Less";
+            }
+
+            isExpanded = !isExpanded;
+        }
+
+        // Optional: reset height on window resize
+        window.addEventListener("resize", () => {
+            const content = document.getElementById("moreContent");
+            if (isExpanded) {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    </script>
+
+
+    <script>
+        function openSideDrawer() {
+            document.getElementById("sideDrawer").classList.remove("-translate-x-full");
+            document.getElementById("sideDrawer").classList.add("translate-x-0");
+        }
+
+        function closeSideDrawer() {
+            document.getElementById("sideDrawer").classList.remove("translate-x-0");
+            document.getElementById("sideDrawer").classList.add("-translate-x-full");
+        }
+
         function activateTab(index) {
             const labels = document.querySelectorAll('.table_color');
 

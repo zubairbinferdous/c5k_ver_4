@@ -33,10 +33,12 @@
             <div class="md:w-3/4">
                 <h1 class="text-center text-2xl font-bold mb-6 font-serif">All Articles</h1>
                 <div class="space-y-8">
+
                     @foreach ($articles as $journalTitle => $journalArticles)
                         <div class="journal-section {{ !$loop->first ? 'hidden' : '' }}" data-journal="{{ $journalTitle }}">
                             <div class="mb-4 p-4 border rounded bg-white shadow-sm">
                                 <h4 class="text-[32px] leading-[40px] mb-3 font-serif">{{ $journalTitle }}</h4>
+                                {{-- @dd($journalArticles); --}}
                                 @foreach ($journalArticles as $issue)
                                     <div
                                         class="issue-container bg-white border border-gray-200 rounded-md p-4 mb-4 hover:bg-gray-100 transition">
@@ -60,11 +62,7 @@
                                                     Download PDF
                                                 </a>
                                             @endif
-                                            {{-- <a href="{{ route('article.issue', ['id' => $journal->id, 'volumeId' => $issue->id, 'issueId' => $issue->issu_no]) }}" target="_blank"
-                                                class="px-4 py-2 rounded bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition">
-                                                Article HTML
-                                            </a> --}}
-                                            <a target="_blank"
+                                            <a target="_blank" href="{{ route('article.issue', ['id' => $issue->journal_idd, 'volumeId' => $issue->volume_id, 'issueId' => $issue->id]) }}"
                                                 class="px-4 py-2 rounded bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition">
                                                 Article HTML
                                             </a>

@@ -18,7 +18,7 @@
                         class="text-[26px] font-bold text-blue-600 hover:underline">{{ $journal->title }}</a>
                     <p class="text-gray-600 text-sm mt-2"><strong>ISSN:</strong> {{ $journal->issn_print }} (print)</p>
                     <p class="text-gray-600 text-sm"><strong>ISSN:</strong> {{ $journal->issn_online }} (online)</p>
-                    <p class="text-gray-600 text-sm"><strong>Publication Frequency:</strong> Monthly</p>
+                    <p class="text-gray-600 text-sm"><strong>Publication Frequency:</strong> {{ $journal->publication_frequency }}</p>
                     <p class="text-gray-600 text-sm"><strong>Citescore:</strong> {{ $journal->cite_score }}</p>
                     <p class="text-gray-600 text-sm"><strong>Impact Factor:</strong> {{ $journal->impact_factor }}</p>
                 </div>
