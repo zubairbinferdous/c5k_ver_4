@@ -12,7 +12,7 @@
         <title>@yield('title') | {{ $setting->title }}</title>
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{ asset('public/uploads/setting/'.$setting->favicon_path) }}">
+        <link rel="shortcut icon" href="{{ asset('uploads/setting/'.$setting->favicon_path) }}">
         @endforeach
 
         @if(empty($setting))
@@ -21,21 +21,26 @@
         @endif
 
         <!-- App css -->
-        {{-- <link href="{{ asset('public/backend/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" /> --}}
+        {{-- <link href="{{ asset('backend/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" /> --}}
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-        <link href="{{ asset('public/backend/css/all.min.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('public/backend/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('public/backend/css/summernote-bs4.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('backend/css/all.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('backend/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('backend/css/summernote-bs4.css') }}" rel="stylesheet" type="text/css" />
         
 
         <!-- third party css -->
-        <link href="{{ asset('public/backend/css/vendor/dataTables.bootstrap4.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('public/backend/css/vendor/switchery.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('backend/css/vendor/dataTables.bootstrap4.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('backend/css/vendor/switchery.min.css') }}" rel="stylesheet" type="text/css" />
         <!-- third party css end -->
 
+        <!-- Sweet Alert Message -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-        <link href="{{ asset('public/backend/css/app.css') }}" rel="stylesheet" type="text/css" />
+        <!-- toaster css plugin -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+        <link href="{{ asset('backend/css/app.css') }}" rel="stylesheet" type="text/css" />
 
         @stack('add-css')
 
@@ -207,22 +212,43 @@
 
 
         <!-- App js -->
-        <script src="{{ asset('public/backend/js/vendor.min.js') }}"></script>
-        <script src="{{ asset('public/backend/js/all.min.js') }}"></script>
-        <script src="{{ asset('public/backend/js/summernote-bs4.js') }}"></script>
+        <script src="{{ asset('backend/js/vendor.min.js') }}"></script>
+        <script src="{{ asset('backend/js/all.min.js') }}"></script>
+        <script src="{{ asset('backend/js/summernote-bs4.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 
+         <!-- toaster Js plugins  -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
         <!-- third party js -->
-        <script src="{{ asset('public/backend/js/vendor/jquery.dataTables.js') }}"></script>
-        <script src="{{ asset('public/backend/js/vendor/dataTables.bootstrap4.js') }}"></script>
-        <script src="{{ asset('public/backend/js/vendor/switchery.min.js') }}"></script>
+        <script src="{{ asset('backend/js/vendor/jquery.dataTables.js') }}"></script>
+        <script src="{{ asset('backend/js/vendor/dataTables.bootstrap4.js') }}"></script>
+        <script src="{{ asset('backend/js/vendor/switchery.min.js') }}"></script>
         <!-- third party js ends -->
         
 
-        <script src="{{ asset('public/backend/js/app.js') }}"></script>
+        <script src="{{ asset('backend/js/app.js') }}"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-
         @stack('add-js')
+
+        {!! Toastr::message() !!}
+
+        <script type="text/javascript">
+
+            @if ($errors->any())
+                @foreach ($errors->all() as $error)
+                    toastr.error("{!! $error !!}");
+                @endforeach
+            @endif
+        </script>
+
+        <script>
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+        </script>
     </body>
 </html>
