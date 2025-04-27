@@ -52,7 +52,7 @@
             <ul class="nav-second-level" aria-expanded="false">
                 <li>
                     <a href="{{ URL::route('books.category.index') }}">Books Category</a>
-                    <a href="#">Books List</a>
+                    <a href="{{ URL::route('book.list.index') }}">Books List</a>
                 </li>
             </ul>
         </li>
